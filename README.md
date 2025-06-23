@@ -15,7 +15,7 @@ I'm a Full Stack Developer passionate about building intelligent, fast, and scal
 
 ### 🔗 Let’s Connect
 
-- Portfolio: [YourWebsite.com](https://yourwebsite.com)
+- Portfolio: https://devopsdeepak.vercel.app/
 - GitHub: [@devopsdeepaks](https://github.com/devopsdeepaks)
 - Email: deepaksinghalgpg@gmail.com
-- LinkedIn: [Your LinkedIn](#)
+- LinkedIn: https://www.linkedin.com/in/devopsdeepak/
