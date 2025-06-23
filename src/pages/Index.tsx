@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, Phone, ExternalLink, Code, Briefcase, GraduationCap, Award } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, ExternalLink, Code, Briefcase, GraduationCap, Award, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -45,28 +45,33 @@ const Index = () => {
       title: 'Sangam Link',
       tech: ['ReactJs', 'Tailwind CSS', 'Node.js', "API's"],
       description: 'Developed a real-time 3-layer dashboard for project analysis and inter-departmental coordination. Enabled task and project creation with double authentication, live status updates, and detailed reporting.',
-      github: true
+      github: true,
+      liveLink: true
     },
     {
       title: 'PerfectMe Link',
       tech: ['ReactJs', 'PostgreSQL', 'OpenAI API'],
       description: 'Developed an AI-powered mock interview platform processing 100+ sessions with real-time feedback. Designed a career roadmap section engaging 200+ users with structured learning paths.',
-      github: true
+      github: true,
+      liveLink: true
     }
   ];
 
   const achievements = [
     {
       title: 'Smart India Hackathon Finalist',
-      description: 'Led a 6-member team in the Smart India Hackathon, securing 2nd place out of 500+ teams. Successfully delivered a complex project within 36 hours, earning national recognition from the Government of India.'
+      description: 'Led a 6-member team in the Smart India Hackathon, securing 2nd place out of 500+ teams. Successfully delivered a complex project within 36 hours, earning national recognition from the Government of India.',
+      image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop'
     },
     {
       title: 'Startup Conclave Winner',
-      description: 'Recognized for PureWash, a platform connecting consumers with 15+ dhobis and 500+ Customers, secured seed funding of INR 2 Lakhs, a 3-month incubation period, and official registration under Startup India.'
+      description: 'Recognized for PureWash, a platform connecting consumers with 15+ dhobis and 500+ Customers, secured seed funding of INR 2 Lakhs, a 3-month incubation period, and official registration under Startup India.',
+      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop'
     },
     {
       title: 'IDE Bootcamp Winner',
-      description: 'Achieved first place in IDE Bootcamp by developing a scalable startup model and mastering business strategy investor pitching under expert guidance.'
+      description: 'Achieved first place in IDE Bootcamp by developing a scalable startup model and mastering business strategy investor pitching under expert guidance.',
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop'
     }
   ];
 
@@ -110,6 +115,10 @@ const Index = () => {
             <Button variant="outline" size="lg" className="group hover:bg-purple-600 hover:text-white transition-all duration-300 border-purple-200 text-sm sm:text-base">
               <Mail className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
               deepaksinghakgec@gmail.com
+            </Button>
+            <Button size="lg" className="group bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              <Download className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+              Download Resume
             </Button>
           </div>
           <div className="flex justify-center gap-4">
@@ -256,11 +265,18 @@ const Index = () => {
                 <CardHeader className="pb-3 sm:pb-4">
                   <div className="flex justify-between items-start mb-3 gap-3">
                     <CardTitle className="text-gray-900 group-hover:text-orange-700 transition-colors text-lg sm:text-xl flex-1">{project.title}</CardTitle>
-                    {project.github && (
-                      <Button variant="ghost" size="sm" className="opacity-0 group-hover:opacity-100 transition-opacity hover:bg-orange-50 hover:text-orange-600 flex-shrink-0">
-                        <Github className="w-4 h-4" />
-                      </Button>
-                    )}
+                    <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0">
+                      {project.github && (
+                        <Button variant="ghost" size="sm" className="hover:bg-gray-50 hover:text-gray-800">
+                          <Github className="w-4 h-4" />
+                        </Button>
+                      )}
+                      {project.liveLink && (
+                        <Button variant="ghost" size="sm" className="hover:bg-orange-50 hover:text-orange-600">
+                          <ExternalLink className="w-4 h-4" />
+                        </Button>
+                      )}
+                    </div>
                   </div>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {project.tech.map((tech) => (
@@ -291,7 +307,14 @@ const Index = () => {
           </div>
           <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {achievements.map((achievement, index) => (
-              <Card key={index} className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-xl bg-white/95 backdrop-blur-sm hover:bg-white group">
+              <Card key={index} className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-xl bg-white/95 backdrop-blur-sm hover:bg-white group overflow-hidden">
+                <div className="aspect-video w-full overflow-hidden">
+                  <img 
+                    src={achievement.image} 
+                    alt={achievement.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
                 <CardHeader className="pb-3 sm:pb-4">
                   <CardTitle className="text-gray-900 text-base sm:text-lg leading-tight group-hover:text-yellow-600 transition-colors">{achievement.title}</CardTitle>
                 </CardHeader>
