@@ -91,7 +91,7 @@ const Index = () => {
       title: "Smart India Hackathon Finalist",
       description:
         "Led a 6-member team in the Smart India Hackathon, securing 2nd place out of 500+ teams. Successfully delivered a complex project within 36 hours, earning national recognition from the Government of India.",
-      image: "/1.jpeg",
+      image: "/3.jpeg",
     },
     {
       title: "Startup Conclave Winner",
@@ -103,7 +103,7 @@ const Index = () => {
       title: "IDE Bootcamp Winner",
       description:
         "Achieved first place in IDE Bootcamp by developing a scalable startup model and mastering business strategy investor pitching under expert guidance.",
-      image: "3.jpeg",
+      image: "1.jpeg",
     },
   ];
 
